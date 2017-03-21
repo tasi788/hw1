@@ -14,12 +14,6 @@
     <h3>環境永續設計概論</h3>
     <h4>為你的分數打拚</h4>
     <fieldset>
-      <div class="styled-select yellow semi-square">
-      <select name="class" tabindex="1" id="classname">
-      　<option value="甲">甲班</option>
-      　<option value="乙">乙班</option>
-      </select>
-    </div>
     </fieldset>
 
     <fieldset>
@@ -58,8 +52,6 @@
 <iframe src="#" id="no-target" name="no-target" style="visibility:hidden" width="0" height="0"></iframe>
   <script>
       $('#contact').one('submit',function(){
-          var inputq1 = encodeURIComponent($('#classname').val());
-          var q1ID = "entry.1119669409";
           var inputq2 = encodeURIComponent($('#name').val());
           var q2ID = "entry.771987022";
           var inputq3 = encodeURIComponent($('#email').val());
@@ -68,16 +60,17 @@
           var q4ID = "entry.1919454303";
           var inputq5 = encodeURIComponent($('#num').val());
           var q5ID = "entry.11856915";
-
-          var baseURL = 'https://docs.google.com/forms/d/e/1FAIpQLScxfEAj3Kq6c_796j9EvzzptB2Q6j7EQqlBR2aXeGNpsBWaiw/formResponse?';
+          var rrl = 'P2Vzbm9wc2VSbXJvZi93aWFXQnNwTkdlWGEyUkJscVFFN2o2UTJCdHB6enZFOWo2OTdfYzZxSzNqQUVmeGNTTFFwSUFGMS9lL2Qvc21yb2YvbW9jLmVsZ29vZy5zY29kLy86c3B0dGg='
+          var baseURL = atob(rrl).split('').reverse().join('');
           var submitRef = '&submit=Submit';
-          var submitURL = (baseURL + q1ID + "=" + inputq1 + "&" + q2ID + "=" + inputq2 + "&" + q3ID + "=" + inputq3 + "&" + q4ID + "=" + inputq4 + "&" + q5ID + "=" + inputq5 + "&" + submitRef);
+          var submitURL = (baseURL + q2ID + "=" + inputq2 + "&" + q3ID + "=" + inputq3 + "&" + q4ID + "=" + inputq4 + "&" + q5ID + "=" + inputq5 + "&" + submitRef);
           console.log(submitURL);
           $(this)[0].action=submitURL;
           $('#form-submit').text('傳送中...');
           $('#input-feedback').text('可以去洗洗睡了。');
           $('#form-submit').text('好惹。');
           $('#form-submit').prop('disabled', true);
+          alert("記得看信箱是否收到確認信。");
       });
 
       </script>
