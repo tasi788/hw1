@@ -2,22 +2,22 @@
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>女裝本本</title>
+  <title>環境永續設計概論</title>
       <link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
-<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 <div class="container">
   <form id="contact" action="" method="POST" target="no-target">
     <h3>環境永續設計概論</h3>
     <h4>為你的分數打拚</h4>
     <fieldset>
       <div class="styled-select yellow semi-square">
-      <select name="class" tabindex="1">
-      　<option value="甲班">甲班</option>
-      　<option value="Taoyuan">乙班</option>
+      <select name="class" tabindex="1" id="classname">
+      　<option value="甲">甲班</option>
+      　<option value="乙">乙班</option>
       </select>
     </div>
     </fieldset>
@@ -33,11 +33,17 @@
     </fieldset>
     <fieldset>
       <div class="styled-select yellow semi-square">
-      <select name="num" tabindex="5">
-      　<option value="Taipei">>>第一組<<</option>
-      　<option value="Taoyuan">第二組</option>
-      　<option value="Hsinchu">第三組</option>
-      　<option value="Miaoli">第四組</option>
+      <select name="num" tabindex="5" id="num">
+      　<option value="第一組">>>第一組<<</option>
+      　<option value="第二組">>>第二組<<</option>
+      　<option value="第三組">>>第三組<<</option>
+      　<option value="第四組">>>第四組<<</option>
+      　<option value="第五組">>>第五組<<</option>
+      　<option value="第六組">>>第六組<<</option>
+      　<option value="第七組">>>第七組<<</option>
+      　<option value="第八組">>>第八組<<</option>
+      　<option value="第九組">>>第九組<<</option>
+      　<option value="第十組">>>第十組<<</option>
       </select>
     </div>
     </fieldset>
@@ -45,18 +51,27 @@
     <button name="submit" type="submit" id="form-submit">(´･_･`)交卷囉</button>
     </fieldset>
     <p class="footer"><a href="http://tdcweb.xyz" target="_blank" >低吸設計der</a> Google提供表單技術。</br><del>但還是低吸寫的比較多啦</del></p>
-    <p id="input-feedback"></p>
+    <font color="white"><p id="input-feedback"></p></font>
 
   </form>
 
 <iframe src="#" id="no-target" name="no-target" style="visibility:hidden" width="0" height="0"></iframe>
   <script>
       $('#contact').one('submit',function(){
-          var inputq1 = encodeURIComponent($('#name').val());
-          var q1ID = "entry.1495147687";
-          var baseURL = 'https://docs.google.com/forms/d/e/1FAIpQLSfTFT1X-mTGXhuowesbX97hkjtqG4MC1mLoOMdknk81V87R0Q/formResponse?';
+          var inputq1 = encodeURIComponent($('#classname').val());
+          var q1ID = "entry.1119669409";
+          var inputq2 = encodeURIComponent($('#name').val());
+          var q2ID = "entry.771987022";
+          var inputq3 = encodeURIComponent($('#email').val());
+          var q3ID = "entry.732242072";
+          var inputq4 = encodeURIComponent($('#url').val());
+          var q4ID = "entry.1919454303";
+          var inputq5 = encodeURIComponent($('#num').val());
+          var q5ID = "entry.11856915";
+
+          var baseURL = 'https://docs.google.com/forms/d/e/1FAIpQLScxfEAj3Kq6c_796j9EvzzptB2Q6j7EQqlBR2aXeGNpsBWaiw/formResponse?';
           var submitRef = '&submit=Submit';
-          var submitURL = (baseURL + q1ID + "=" + inputq1 + submitRef);
+          var submitURL = (baseURL + q1ID + "=" + inputq1 + "&" + q2ID + "=" + inputq2 + "&" + q3ID + "=" + inputq3 + "&" + q4ID + "=" + inputq4 + "&" + q5ID + "=" + inputq5 + "&" + submitRef);
           console.log(submitURL);
           $(this)[0].action=submitURL;
           $('#form-submit').text('傳送中...');
